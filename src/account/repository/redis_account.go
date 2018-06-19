@@ -1,11 +1,11 @@
 package repository
 
 import (
-	"encoding/json"
 	"fmt"
 	"log"
 
 	redigo "github.com/gomodule/redigo/redis"
+	"github.com/json-iterator/go"
 	cache "github.com/patrickmn/go-cache"
 	"github.com/sportivaid/go-template/src/account"
 	"github.com/sportivaid/go-template/src/common/apperror"
@@ -15,6 +15,10 @@ import (
 const (
 	KeyAccountsFindAll = "accounts:find_all"
 	KeyAccountsFind    = "accounts:find"
+)
+
+var (
+	json = jsoniter.ConfigCompatibleWithStandardLibrary
 )
 
 type redisAccountRepo struct {

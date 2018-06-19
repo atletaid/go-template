@@ -1,13 +1,17 @@
 package httputil
 
 import (
-	"encoding/json"
 	"net/http"
 	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/form"
+	"github.com/json-iterator/go"
 	"github.com/sportivaid/go-template/src/common/apperror"
+)
+
+var (
+	json = jsoniter.ConfigCompatibleWithStandardLibrary
 )
 
 type response struct {
